@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cit262-group3
+  name: cit262-group4
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: cit262-group3
+      app: cit262-group4
   template:
     metadata:
       labels:
-        app: cit262-group3
+        app: cit262-group4
     spec:
       containers:
-      - name: cit262-group3
-        image: gcr.io/potent-galaxy-274115/cit262-group3
+      - name: cit262-group4
+        image: gcr.io/potent-galaxy-274115/cit262-group4
         ports:
         - containerPort: 80
         resources:
@@ -37,7 +37,7 @@ metadata:
   name: cit262-group3-service
 spec:
   selector:
-    app: cit262-group3
+    app: cit262-group4
   ports:
     - protocol: TCP
       port: 80
@@ -46,10 +46,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: cit262-group3-loadbalancer
+  name: cit262-group4-loadbalancer
 spec:
   selector:
-    app: cit262-group3
+    app: cit262-group4
   type: LoadBalancer
   ports:
   - port: 80
